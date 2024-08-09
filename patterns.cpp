@@ -30,7 +30,7 @@ void lowerTriangleNums(int n)
 {
     for (int i = 0; i < n; i++)
     {
-        for (int j = 1; j <= i+1; j++)
+        for (int j = 1; j <= i + 1; j++)
         {
             cout << j;
         }
@@ -40,9 +40,9 @@ void lowerTriangleNums(int n)
 
 void lowerTriangleNumsSame(int n)
 {
-    for (int i = 1; i < n+1; i++)
+    for (int i = 1; i < n + 1; i++)
     {
-        for (int j = 0; j <i; j++)
+        for (int j = 0; j < i; j++)
         {
             cout << i;
         }
@@ -50,10 +50,68 @@ void lowerTriangleNumsSame(int n)
     }
 }
 
+void triangleFormation(int n, int m)
+{
+    // below is my approach
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < m; j++)
+        {
+            if ((floor(m / 2) + i) < j || (floor(m / 2) - i) > j)
+            {
+                cout << " ";
+            }
+            else
+            {
+                cout << "*";
+            }
+        }
+        cout << endl;
+    }
+
+    // below is striver approach
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n - i - 1; j++)
+        {
+            cout << " ";
+        }
+
+        for (int j = 0; j < 2 * i + 1; j++)
+        {
+            cout << "*";
+        }
+
+        for (int j = 0; j < n - i - 1; j++)
+        {
+            cout << " ";
+        }
+        cout << endl;
+    }
+}
+
+void lowerTriangleBinary(int n)
+{
+    for (int i = 0; i < n; i++)
+    {
+        int binary = 1;
+        if(i % 2 != 0) binary = 0;
+        for (int j = 1; j <= i + 1; j++)
+        {
+            cout << binary;
+            if (binary == 1)
+                binary = 0;
+            else
+                binary = 1;
+        }
+        cout << endl;
+    }
+}
 
 int main()
 {
-    int n;
+    int n, m;
     cin >> n;
-    lowerTriangleNumsSame(n);
+    lowerTriangleBinary(n);
+    //  for a good pattern check ss13
 }
