@@ -195,5 +195,18 @@ int main()
 
     // have a look at ss5 and ss6 for a good time complexity problem
 
+
+
+
+
+
+    ////////////////////////SPACE COMPLEXITY/////////////////////////////
+
+    // space complexity is the memory space that your program is taking
+    // but again we will be calculaing the space complexity in terms of big-oh notation
+    // check ss7, ss8 for space complexity
+    // check ss11 for how much time complexity should your code take to skip time limit error
+    
+
     return 0;
 }
