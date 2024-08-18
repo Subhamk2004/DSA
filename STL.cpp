@@ -12,7 +12,16 @@ void explainPair()
     pair<int, int> arr[] = {{1, 2}, {3, 4}, {5, 6}, {7, 8}};
     // the above is an array of pairs;
 
-    cout << arr[1].second << endl;
+    // cout << arr[1].second << endl;
+    vector<pair<int,int>> v = {{1,2}, {10,5}, {5,9}, {3,43}};
+    sort(v.begin(), v.end());
+    for(int i = 0 ; i< v.size(); i++) {
+        cout<<v[i].first<<" "<<v[i].second<<endl;
+    }
+    v.erase(v.begin());
+    for(int i = 0 ; i< v.size(); i++) {
+        cout<<v[i].first<<" "<<v[i].second<<endl;
+    }
 }
 
 void explainVector()
@@ -247,6 +256,6 @@ void explainExtra()
 
 int main()
 {
-    explainMap();
+    explainPair();
     return 0;
 }

@@ -54,8 +54,8 @@ int main() {
     }
 
 
-    // now since hashing through array can be very expensice for system and time complexity,so we will be using maps for hashing 
-    // check ss41 for more on what are the benefits of using map
+    // now since hashing through array can be very expensive for system and time complexity,so we will be using maps for hashing 
+    // check ss41 for more on what are the benefits of using map 
 
     int n1;
     cin>>n1;
