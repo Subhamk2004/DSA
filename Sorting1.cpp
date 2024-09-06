@@ -40,8 +40,24 @@ void BubbleSort(int arr[], int n)
     }
 }
 
+void bubbleSortR(int arr[], int n)
+{
+    if (n == 1)
+        return;
+    for (int i = 0; i < n; i++)
+    {
+        if (arr[i] > arr[i + 1])
+        {
+            swap(arr[i], arr[i + 1]);
+        }
+    }
+    bubbleSortR(arr, n - 1);
+}
+
 void InsertionSort(int arr[], int n)
 {
+    // in this we start sorting from start to end and place elements at it's correct position,
+
     for (int i = 0; i < n - 1; i++)
     {
         if (arr[i] < arr[i + 1])
@@ -56,7 +72,7 @@ void InsertionSort(int arr[], int n)
                 {
                     int temp = arr[j];
                     arr[j] = arr[j - 1];
-                    arr[j-1] = temp;
+                    arr[j - 1] = temp;
                 }
                 else
                 {
@@ -64,6 +80,26 @@ void InsertionSort(int arr[], int n)
                 }
             }
         }
+    }
+}
+
+void insertionSortR(int arr[], int j, int n)
+{
+    if (j == n - 1)
+        return;
+    if (arr[j] < arr[j + 1])
+    {
+        insertionSortR(arr, j+1, n);
+    }
+    else if (arr[j] > arr[j + 1])
+    {
+        int i = j;
+        while (arr[i] > arr[i + 1])
+        {
+            swap(arr[i], arr[i + 1]);
+            i--;
+        }
+        insertionSortR(arr, j+1, n);
     }
 }
 
@@ -77,7 +113,7 @@ int main()
         cin >> arr[i];
     }
 
-    InsertionSort(arr, n);
+    insertionSortR(arr,0, n);
     for (int i = 0; i < n; i++)
     {
         cout << arr[i] << " ";
